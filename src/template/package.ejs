@@ -1,0 +1,86 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    <%_ if (devDependencies.includes('es')) { %>
+    ,"start": "nodemon --exec babel-node src/index.js"
+    <% } else if (devDependencies.includes('Typescript')) { _%>
+      ,"start": "npx rollup -c -w && npx nodemon dist/index.js"
+    <% } else { _%>
+      ,"start": "nodemon src/index.js"
+    <% } _%>
+  },
+  "author": "<%= author %>",
+  "license": "<%= license %>",
+  "dependencies": {
+    <%_ if (dependencies.includes('koa2')) {%>
+    "koa": "^2.13.1"
+    <% } _%>
+    <%_ if (dependencies.includes('koa-router')) {%>
+    ,"koa-router": "^10.0.0"
+    <% } _%>
+    <%_ if (dependencies.includes('koa-bodyparser')) {%>
+    ,"koa-bodyparser": "^4.3.0"
+    <% } _%>
+    <%_ if (dependencies.includes('koa2-cors')) {%>
+    ,"koa2-cors": "^2.0.6"
+    <% } _%>
+    <%_ if (dependencies.includes('koa-compress')) {%>
+      ,"koa-compress": "^5.0.1"
+    <% } _%>
+    <%_ if (dependencies.includes('koa-static')) {%>
+      ,"koa-static": "^5.0.0"
+    <% } _%>
+    <%_ if (dependencies.includes('koa-helmet')) {%>
+      ,"koa-helmet": "^6.1.0"
+    <% } _%>
+    <%_ if (dependencies.includes('koa-logger')) {%>
+    ,"koa-logger": "^3.2.1"
+    <% } _%>
+    <%_ if (dependencies.includes('https')) {%>
+    ,"https": "^1.0.0"
+    <% } _%>
+    <%_ if (dependencies.includes('http')) {%>
+    ,"http": "^0.0.1-security"
+    <% } %>
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+    <%_ if (devDependencies.includes('es')) {%>
+      ,"@babel/core": "^7.14.6"
+      ,"@babel/node": "^7.14.7"
+      ,"@babel/preset-env": "^7.14.7"
+    <% } else if (devDependencies.includes('Typescript')) {%>
+      ,"@rollup/plugin-json": "^4.1.0"
+      ,"@rollup/plugin-run": "^2.0.2"
+      ,"@rollup/plugin-typescript": "^8.2.3"
+      ,"@rollup/plugin-commonjs": "^19.0.1"
+      ,"rollup": "^2.53.2"
+      <%_ if (dependencies.includes('koa2')) {%>
+      ,"@types/koa": "^2.13.4"
+      <% } _%>
+      <%_ if (dependencies.includes('koa-bodyparser')) {%>
+      ,"@types/koa-bodyparser": "^4.3.2"
+      <% } _%>
+      <%_ if (dependencies.includes('koa-router')) {%>
+      ,"@types/koa-router": "^7.4.4"
+      <% } _%>
+      <%_ if (dependencies.includes('koa2-cors')) {%>
+      ,"@types/koa2-cors": "^2.0.2"
+      <% } _%>
+      <%_ if (dependencies.includes('koa-compress')) {%>
+      ,"@types/koa-compress": "^4.0.3"
+      <% } _%>
+      <%_ if (dependencies.includes('koa-helmet')) {%>
+        ,"@types/koa-helmet": "^6.0.4"
+      <% } _%>
+      <%_ if (dependencies.includes('koa-static')) {%>
+        ,"@types/koa-static": "^4.0.2"
+      <% } _%>
+    <% } %>
+  }
+}
+  

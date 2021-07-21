@@ -1,0 +1,81 @@
+import Koa from 'koa';
+<%_ if (dependencies.includes('koa-bodyparser')) {%>
+import bodyParser from 'koa-bodyparser';
+<% } _%>
+<%_ if (dependencies.includes('koa2-cors')) {%>
+import cors from 'koa2-cors';
+<% } _%>
+<%_ if (dependencies.includes('koa-logger')) {%>
+import logger from 'koa-logger';
+<% } _%>
+<%_ if (dependencies.includes('koa-compress')) {%>
+  import compress from 'koa-compress';
+<% } _%>
+<%_ if (dependencies.includes('koa-helmet')) {%>
+  import helmet from 'koa-helmet';
+<% } _%>
+<%_ if (dependencies.includes('koa-static')) {%>
+  import koaStatic from 'koa-static';
+<% } _%>
+<%_ if (dependencies.includes('koa-router')) {%>
+import router from './routers';
+<% } _%>
+import { getLocalAddress } from './utils';
+
+const app = new Koa();
+
+<%_ if (dependencies.includes('koa-logger')) {%>
+app.use(logger());
+<% } _%>
+
+<%_ if (dependencies.includes('koa2-cors')) {%>
+app.use(cors({
+    origin: '*',
+    allowMethods: ['POST', 'GET', 'OPTIONS'],
+    allowHeaders: ['origin', 'content-type', 'authorization'],
+}));
+<% } _%>
+
+<%_ if (dependencies.includes('koa-bodyparser')) {%>
+app.use(bodyParser());
+<% } _%>
+
+<%_ if (dependencies.includes('koa-helmet')) {%>
+  app.use(helmet());
+<% } _%>
+
+<%_ if (dependencies.includes('koa-static')) {%>
+  const staticRootDir = 'static';
+  app.use(koaStatic(staticRootDir));
+<% } _%>
+
+<%_ if (dependencies.includes('koa-compress')) {%>
+  app.use(compress({
+      filter (content_type) {
+          return /text/i.test(content_type)
+      },
+      threshold: 2048,
+      gzip: {
+        flush: require('zlib').constants.Z_SYNC_FLUSH
+      },
+      deflate: {
+        flush: require('zlib').constants.Z_SYNC_FLUSH,
+      }
+  }));
+<% } _%>
+
+<%_ if (dependencies.includes('koa-router')) {%>
+app.use(router.routes()).use(router.allowedMethods());
+<% } _%>
+
+app.on('error', (error) => {
+    console.log(`服务器错误：${error}`);
+});
+
+app.listen(<%= port %>, () => {
+    console.log(`
+    程序初始化完成，监听端口为：${<%= port %>}，
+    请求地址：http://localhost:${<%= port %>},
+            http://${getLocalAddress()}:${<%= port %>}
+    `);
+});

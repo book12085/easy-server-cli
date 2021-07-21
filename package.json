@@ -1,0 +1,37 @@
+{
+  "name": "easy-server-cli",
+  "version": "1.0.0",
+  "description": "快速创建后端服务",
+  "bin": {
+    "esc": "bin/index.js"
+  },
+  "files": [
+    "package.json",
+    "bin"
+  ],
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx nodemon src/index.js"
+  },
+  "keywords": [
+    "koa2",
+    "cli",
+    "server",
+    "api"
+  ],
+  "author": "book12085",
+  "license": "MIT",
+  "devDependencies": {
+    "chilk": "^1.0.4",
+    "commander": "^8.0.0",
+    "cross-spawn": "^7.0.3",
+    "ejs": "^3.1.6",
+    "inquirer": "^8.1.2",
+    "nodemon": "^2.0.12",
+    "ora": "^5.4.1",
+    "prettier": "^2.3.2",
+    "prettier-package-json": "^2.6.0"
+  }
+}

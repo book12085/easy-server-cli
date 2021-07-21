@@ -1,0 +1,13 @@
+class Login {
+    static loginIn(context) {
+        <%#<!-- 获取request的参数 -->
+        <!-- const { name } = context.request.body; -->%>
+        console.log('请求参数：', context.request.body);
+        context.response.body = {
+            code: 0,
+            msg: '成功'
+        };
+    }
+}
+
+module.exports = Login;

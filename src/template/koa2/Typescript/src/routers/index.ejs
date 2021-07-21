@@ -1,0 +1,10 @@
+import Router from 'koa-router';
+import Login from './login';
+
+const router = new Router({
+    methods: ['POST']
+});
+
+router.post('/login', Login.loginIn);
+
+export default router;
