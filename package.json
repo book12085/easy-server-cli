@@ -26,6 +26,10 @@
   ],
   "author": "book12085",
   "license": "MIT",
+  "repository": {
+    "type": "GitHub",
+    "url": "https://github.com/book12085/easy-server-cli.git"
+  },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
