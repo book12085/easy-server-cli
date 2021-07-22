@@ -1,6 +1,6 @@
 {
   "name": "easy-server-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "快速创建后端服务",
   "bin": {
     "esc": "bin/index.js"
