@@ -5,10 +5,9 @@ import Question from './questions/index.js';
 import { installAll, getLocalAddress } from './utils/index.js';
 import { mkDir, readTemplate } from './utils/file.js';
 import loading from './utils/loading.js';
+import { version } from '../package.json';
 
-program.version('1.0.1').command('create <name>').description('请输入项目名称').action(name => {
-    console.log(name);
-});
+program.version(version).command('create <name>').description('请输入项目名称');
 
 program.parse(process.argv);
 
