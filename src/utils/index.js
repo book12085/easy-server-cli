@@ -1,5 +1,4 @@
 import spawn from 'cross-spawn';
-import chalk from 'chalk';
 import os from 'os';
 
 /**
