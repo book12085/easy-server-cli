@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.1",
+    "@rollup/plugin-json": "^4.1.0",
     "chalk": "^1.1.3",
     "commander": "^8.0.0",
     "commitlint": "^12.1.4",
@@ -56,6 +57,7 @@
     "ora": "^5.4.1",
     "prettier": "^2.3.2",
     "prettier-package-json": "^2.6.0",
-    "rollup": "^2.53.3"
+    "rollup": "^2.53.3",
+    "rollup-plugin-terser": "^7.0.2"
   }
 }
