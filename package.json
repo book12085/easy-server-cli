@@ -1,6 +1,6 @@
 {
   "name": "easy-server-cli",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "快速创建后端服务",
   "bin": {
     "esc": "bin/index.js"
@@ -43,21 +43,23 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.1",
     "@rollup/plugin-json": "^4.1.0",
-    "chalk": "^1.1.3",
-    "commander": "^8.0.0",
     "commitlint": "^12.1.4",
     "conventional-changelog-cli": "^2.1.1",
-    "cross-spawn": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "ejs": "^3.1.6",
     "eslint": "^7.31.0",
     "husky": "^7.0.1",
-    "inquirer": "^8.1.2",
     "nodemon": "^2.0.12",
-    "ora": "^5.4.1",
-    "prettier": "^2.3.2",
-    "prettier-package-json": "^2.6.0",
     "rollup": "^2.53.3",
     "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "commander": "^8.0.0",
+    "cross-spawn": "^7.0.3",
+    "ejs": "^3.1.6",
+    "inquirer": "^8.1.2",
+    "ora": "^5.4.1",
+    "prettier": "^2.3.2",
+    "prettier-package-json": "^2.6.0"
   }
 }
