@@ -10,10 +10,10 @@ import { fileSuffix } from '../config/index.js';
  * @param {string} name 
  * @returns 
  */
- const mkDir = (name) => {
+const mkDir = (name) => {
     if (fs.existsSync(name)) return;
     fs.mkdirSync(name);
-}
+};
 
 /**
  * 递归读取指定目录下的文件和文件夹
@@ -66,17 +66,17 @@ const readFile = (filePath, answers) => {
             
         }
     }
-}
+};
 
 /**
  * 读取项目模版
  * @param {object} answers 项目配置选项
  */
- const readTemplate = (answers) => {
+const readTemplate = (answers) => {
     const __dirname = path.resolve(path.dirname(''));
     const tempRootPath = path.join(__dirname, 'src/template');
     readFile(tempRootPath, answers);
-}
+};
 
 export {
     mkDir,

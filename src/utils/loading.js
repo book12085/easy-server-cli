@@ -7,4 +7,4 @@ export default (message) => {
         spinner = ora(message).start();
     }
     return spinner;
-}
+};

@@ -10,7 +10,8 @@
     "serve": "npx nodemon src/index.js",
     "build": "npx rollup -c",
     "commit": "git add . && git cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "eslint": "eslint src/*"
   },
   "files": [
     "bin",
@@ -44,6 +45,7 @@
     "cross-spawn": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "ejs": "^3.1.6",
+    "eslint": "^7.31.0",
     "husky": "^7.0.1",
     "inquirer": "^8.1.2",
     "nodemon": "^2.0.12",

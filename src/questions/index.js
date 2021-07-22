@@ -94,7 +94,7 @@ const questions = [
         ]
     },
     {
-        type: "input",
+        type: 'input',
         name: 'description',
         message: '请输入项目描述'
     },
@@ -127,7 +127,7 @@ class Question {
                         return '项目名称必须以小写字母开头';
                     }
                 }
-            })
+            });
         } else {
             questions.unshift({
                 type: 'input',

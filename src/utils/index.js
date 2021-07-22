@@ -13,7 +13,7 @@ const installAll = async (answers) => {
     if (child.status !== 0) {
         process.exit(1);
     }
-}
+};
 
 /**
  * 获取本机IP地址
@@ -30,7 +30,7 @@ const getLocalAddress = () => {
             }
         }
     }
-}
+};
 
 export {
     installAll,
