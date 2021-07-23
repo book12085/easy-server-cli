@@ -21,6 +21,7 @@ const mkDir = (name) => {
  * @param {object} answers 
  */
 const readFile = (filePath, answers) => {
+    console.log('模板地址:', filePath);
     if (fs.lstatSync(filePath).isDirectory()) {
         const fileList = fs.readdirSync(filePath);
         fileList.forEach((item) => {
@@ -73,9 +74,8 @@ const readFile = (filePath, answers) => {
  * @param {object} answers 项目配置选项
  */
 const readTemplate = (answers) => {
-    const __dirname = path.resolve(path.dirname(''));
-    const tempRootPath = path.join(__dirname, 'src/template');
-    readFile(tempRootPath, answers);
+    const templatePath = path.resolve(require.main.path, '../src/template');
+    readFile(templatePath, answers);
 };
 
 export {
