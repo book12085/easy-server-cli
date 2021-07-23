@@ -57,7 +57,7 @@ npm i -g easy-server-cli
 
 2. 创建项目
 ```javascript
-esc create <name>
+esc init <name>
 ```
 
 3. 运行项目
