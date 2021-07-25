@@ -17,6 +17,7 @@
     "bin",
     "dist/*",
     "package.json",
+    "package-lock.json",
     "src/template/*"
   ],
   "keywords": [
@@ -30,6 +31,10 @@
   "repository": {
     "type": "GitHub",
     "url": "https://github.com/book12085/easy-server-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/book12085/easy-server-cli/issues",
+    "email": "aaronbiao@126.com"
   },
   "config": {
     "commitizen": {
