@@ -15,8 +15,8 @@ export default {
         */`,
     },
     plugins: [json(), terser({
-        compress: {
-            drop_console: true
-        },
+        // compress: {
+        //     drop_console: true
+        // },
     })]
 };

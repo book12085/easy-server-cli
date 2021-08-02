@@ -2,7 +2,7 @@
 import program from 'commander';
 import chalk from 'chalk';
 import Question from './questions/index.js';
-import { installAll, getLocalAddress } from './utils/index.js';
+import { installAll, getLocalAddress, formatFile } from './utils/index.js';
 import { mkDir, readTemplate } from './utils/file.js';
 // import loading from './utils/loading.js';
 import { version } from '../package.json';
@@ -29,6 +29,8 @@ Question.getAnswers(name).then(answers => {
     // loading().text = '正在安装依赖';
     // 安装依赖
     installAll(answers);
+    //代码格式化
+    formatFile(answers.name);
     // loading().text = '依赖安装完成';
     // loading().stop();
     console.log(chalk.green('<--- 依赖安装完成'));
