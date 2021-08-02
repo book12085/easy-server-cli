@@ -102,11 +102,14 @@ import { fileSuffix } from '../config/index.js';
 
 - [x] 1. 模板 - 增加eslint
 - [ ] 2. 模版 - 远程模版
-- [ ] 3. cli - 增加单元测试
-- [ ] 4. cli - 增加eslint
+- [x] 3. cli - 增加单元测试
+- [x] 4. cli - 增加eslint
 - [ ] 5. cli - 增加express的支持
 - [ ] 6. cli - 逻辑优化
 - [x] 7. cli - 提交规范
+- [ ] 8. 模版 - 增加压力测试（autocannon）
+- [ ] 9. 模版 - 增加接口性能测试（benchmark）
+- [ ] 10. 模版 - 增加单元测试（mocha + chai）
 
 # 六. Licence
 easy-server-cli is open source software licensed as [MIT](https://github.com/book12085/easy-server-cli/blob/master/LICENSE).

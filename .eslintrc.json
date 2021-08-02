@@ -1,11 +1,16 @@
 {
     "globals": {
         "process": "readonly",
-        "require": "writable"
+        "require": "writable",
+        "describe": "readonly",
+        "it": "readonly",
+        "expect": "readonly"
     },
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "commonjs": true,
+        "node": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {

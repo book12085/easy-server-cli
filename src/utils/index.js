@@ -32,7 +32,23 @@ const getLocalAddress = () => {
     }
 };
 
+/**
+ * 格式化代码
+ * @param {String} name 目录
+ */
+const formatFile = (name) => {
+    const child = spawn.sync('npm', ['run', 'lint-fix'], {
+        cwd: name,
+        stdio: 'inherit'
+    });
+
+    if (child.status !== 0) {
+        process.exit(1);
+    }
+};
+
 export {
     installAll,
     getLocalAddress,
+    formatFile
 };
