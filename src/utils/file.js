@@ -53,7 +53,6 @@ const readFile = (filePath, answers) => {
                 fs.writeFileSync(`${answers.name}/${fileName[fileName.length - 1]}`, code);
             }
         } else {
-            console.log(fs.existsSync(`${answers.name}/.eslintrc.json`));
             const pt = prettier.format(code, {
                 parser: 'babel'
             });
